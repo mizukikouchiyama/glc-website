@@ -416,8 +416,8 @@
     .card {
       background-color: var(--bg-card); border-radius: var(--radius-md);
       padding: clamp(24px, 3vw, 36px); display: flex;
-      flex-direction: column; justify-content: space-between;
-      min-height: 380px;
+      flex-direction: column; justify-content: flex-start;
+      min-height: auto;
       opacity: 0; transform: translateY(40px);
       transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
     }
@@ -435,6 +435,8 @@
     .card__desc {
       font-family: var(--font-serif); font-size: 0.95rem;
       line-height: 1.6; color: var(--text-secondary);
+      overflow-wrap: break-word;
+      word-break: auto-phrase;
     }
 
     .card__inline-link {
@@ -665,41 +667,25 @@
     <!-- LATEST RELEASES / CARDS -->
     <section class="releases" aria-labelledby="releases-heading">
       <div class="container">
-        <h2 class="releases__heading" id="releases-heading" data-animate="fade">Latest insights</h2>
+        <h2 class="releases__heading" id="releases-heading" data-animate="fade">Works</h2>
         <div class="card-grid" data-animate="stagger-cards">
           <article class="card">
             <div class="card__body">
-              <h3 class="card__title">Navigating Uncertainty in Global Markets</h3>
-              <p class="card__desc">A strategic framework for decision-makers facing unprecedented volatility and complexity.</p>
+              <h3 class="card__title">家庭教師事業</h3>
+              <p class="card__desc">生徒一人ひとりの個性と目標に深く寄り添い、対話を通じて「自ら考える力」を育む完全個別指導。防府市を中心に、目先の点数だけでなく学習のプロセスそのものを大切にした、きめ細やかなサポートを提供します。</p>
             </div>
-            <div class="card__meta">
-              <div class="card__meta-row"><span class="card__meta-label">Date</span><span class="card__meta-value">March 5, 2026</span></div>
-              <div class="card__meta-row"><span class="card__meta-label">Category</span><span class="card__meta-value">Strategy</span></div>
-            </div>
-            <div class="card__cta"><a href="#" class="btn--card">Read the brief <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
           </article>
           <article class="card">
             <div class="card__body">
-              <h3 class="card__title">GLC Methodology 3.0</h3>
-              <p class="card__desc">Introducing our most refined analytical framework yet with enhanced predictive modelling across governance, legal, and commercial domains.</p>
-              <a href="#" class="card__inline-link">Read announcement <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              <h3 class="card__title">オンライン授業</h3>
+              <p class="card__desc">場所や時間にとらわれない、柔軟で質の高い学習環境。画面越しでも対面と変わらない熱量で指導を行うとともに、Slack等を活用した日々の質問対応など、本番に向けて最後まで伴走します。</p>
             </div>
-            <div class="card__meta">
-              <div class="card__meta-row"><span class="card__meta-label">Date</span><span class="card__meta-value">February 17, 2026</span></div>
-              <div class="card__meta-row"><span class="card__meta-label">Category</span><span class="card__meta-value">Methodology</span></div>
-            </div>
-            <div class="card__cta"><a href="#" class="btn--card">View details <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
           </article>
           <article class="card">
             <div class="card__body">
-              <h3 class="card__title">Clarity is a space to think</h3>
-              <p class="card__desc">No noise. No conflicts of interest. Just rigorous analysis and genuinely transformative counsel.</p>
+              <h3 class="card__title">テキスト執筆・資料作成</h3>
+              <p class="card__desc">生徒の弱点克服や目標に合わせて、オリジナルの学習資料をオーダーメイドで作成。市販の参考書にはない、一人ひとりの理解度に最適化された教材（PDF・紙媒体）で、確かな実力アップを後押しします。</p>
             </div>
-            <div class="card__meta">
-              <div class="card__meta-row"><span class="card__meta-label">Date</span><span class="card__meta-value">February 4, 2026</span></div>
-              <div class="card__meta-row"><span class="card__meta-label">Category</span><span class="card__meta-value">Perspectives</span></div>
-            </div>
-            <div class="card__cta"><a href="#" class="btn--card">Read the post <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
           </article>
         </div>
       </div>
