@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GLC — 未知の領域へ踏み出す、しなやかな知性を。自ら問いを見つけ、豊かに学び続ける人へ。">
-  <title>About — GLC</title>
+  <meta name="description" content="GLC — お問い合わせ。入塾・家庭教師・オンライン授業・受験相談など、お気軽にご連絡ください。">
+  <title>Contact — GLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,6 +35,7 @@
       --radius-pill: 100px;
       --container-max: 1320px;
       --gutter: clamp(20px, 4vw, 48px);
+      --accent: #D97706;
     }
 
     /* ========================================
@@ -142,59 +143,222 @@
     }
 
     /* ========================================
-       ABOUT SECTION
+       CONTACT SECTION
        ======================================== */
-    .about { padding: clamp(80px, 10vw, 140px) 0; }
+    .contact {
+      padding: clamp(80px, 10vw, 140px) 0;
+    }
 
-    .about__inner {
-      max-width: 760px;
+    .contact__inner {
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .about__heading {
+    .contact__heading {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       font-weight: 400;
       color: var(--text-primary);
-      margin-bottom: clamp(40px, 5vw, 64px);
+      margin-bottom: clamp(16px, 2vw, 24px);
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
     }
-    .about__heading.is-visible { opacity: 1; transform: translateY(0); }
+    .contact__heading.is-visible { opacity: 1; transform: translateY(0); }
 
-    .about__subheading {
+    .contact__lead {
       font-family: var(--font-sans);
-      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-      font-weight: 700;
-      line-height: 1.5;
-      color: var(--text-primary);
-      margin-bottom: clamp(20px, 2.5vw, 28px);
-      margin-top: clamp(48px, 6vw, 72px);
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
-    }
-    .about__subheading.is-visible { opacity: 1; transform: translateY(0); }
-
-    .about__text {
-      font-family: var(--font-sans);
-      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
-      font-weight: 400;
-      line-height: 2;
+      font-size: clamp(0.92rem, 1.05vw, 1rem);
+      line-height: 1.8;
       color: var(--text-secondary);
-      margin-bottom: clamp(20px, 2.5vw, 28px);
+      margin-bottom: clamp(48px, 6vw, 72px);
       opacity: 0; transform: translateY(20px);
       transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
     }
-    .about__text.is-visible { opacity: 1; transform: translateY(0); }
+    .contact__lead.is-visible { opacity: 1; transform: translateY(0); }
 
-    .about__divider {
-      width: 48px; height: 1px;
-      background-color: var(--border-fine);
-      margin: clamp(48px, 6vw, 72px) 0;
-      opacity: 0;
-      transition: opacity 0.7s var(--ease-smooth);
+    /* ---- Form rows ---- */
+    .form-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: clamp(24px, 3vw, 32px) 0;
+      border-top: 1px solid var(--border-fine);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
     }
-    .about__divider.is-visible { opacity: 1; }
+    .form-row.is-visible { opacity: 1; transform: translateY(0); }
+
+    .form-row:last-of-type {
+      border-bottom: 1px solid var(--border-fine);
+    }
+
+    .form-label {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding-top: 14px;
+      line-height: 1.5;
+    }
+
+    .form-label .required {
+      color: var(--accent);
+      font-weight: 700;
+      margin-left: 4px;
+    }
+
+    /* ---- Inputs ---- */
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      background-color: #F0EDEA;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 14px 18px;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+      outline: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--border-fine);
+      background-color: #FAFAF8;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%238A847D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    .form-select option {
+      font-family: var(--font-sans);
+    }
+
+    .form-textarea {
+      min-height: 180px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    .form-name-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ---- Checkbox ---- */
+    .form-checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: clamp(24px, 3vw, 32px) 0;
+      justify-content: center;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .form-checkbox-row.is-visible { opacity: 1; transform: translateY(0); }
+
+    .form-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      user-select: none;
+    }
+
+    .form-checkbox input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid var(--border-fine);
+      border-radius: 4px;
+      background-color: #F0EDEA;
+      cursor: pointer;
+      flex-shrink: 0;
+      position: relative;
+      transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .form-checkbox input[type="checkbox"]:checked {
+      background-color: var(--btn-bg);
+      border-color: var(--btn-bg);
+    }
+
+    .form-checkbox input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 6px;
+      width: 5px; height: 9px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .form-checkbox .privacy-link {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity var(--transition-fast);
+    }
+    .form-checkbox .privacy-link:hover { opacity: 0.6; }
+
+    .form-checkbox .required {
+      color: var(--accent);
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    /* ---- Submit ---- */
+    .form-submit-wrap {
+      display: flex;
+      justify-content: center;
+      padding-top: clamp(32px, 4vw, 48px);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .form-submit-wrap.is-visible { opacity: 1; transform: translateY(0); }
+
+    .form-submit {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      background-color: var(--bg-card);
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 18px 80px;
+      cursor: pointer;
+      transition: background-color var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    .form-submit:hover {
+      background-color: #D9D4CD;
+    }
+
+    .form-submit:focus-visible {
+      outline: 2px solid var(--text-primary);
+      outline-offset: 3px;
+    }
 
     /* ========================================
        FOOTER
@@ -248,6 +412,13 @@
     @media (max-width: 768px) {
       .main-nav__list { display: none; }
       .nav-toggle { display: flex; }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .form-label {
+        padding-top: 0;
+      }
       .footer__top { flex-direction: column; gap: 36px; }
       .footer__nav-list { flex-wrap: wrap; gap: 16px 24px; }
       .footer__bottom { grid-template-columns: 1fr; justify-items: center; gap: 12px; text-align: center; }
@@ -257,6 +428,9 @@
 
     @media (max-width: 480px) {
       .nav-cta-wrap .btn--primary span { display: none; }
+      .form-name-group {
+        grid-template-columns: 1fr;
+      }
     }
 
     :focus-visible { outline: 2px solid var(--text-primary); outline-offset: 3px; border-radius: 3px; }
@@ -272,7 +446,8 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
-      .about__heading, .about__subheading, .about__text, .about__divider {
+      .contact__heading, .contact__lead, .form-row,
+      .form-checkbox-row, .form-submit-wrap {
         opacity: 1 !important; transform: none !important;
       }
     }
@@ -304,31 +479,73 @@
   </header>
 
   <main>
-    <section class="about" id="about" aria-labelledby="about-heading">
+    <section class="contact" aria-labelledby="contact-heading">
       <div class="container">
-        <div class="about__inner">
-          <h1 class="about__heading" id="about-heading" data-animate="fade">About Us</h1>
+        <div class="contact__inner">
+          <h1 class="contact__heading" id="contact-heading" data-animate="fade">Contact</h1>
+          <p class="contact__lead" data-animate="fade">入塾・家庭教師・オンライン授業・受験相談など、お気軽にお問い合わせください。<br>内容を確認の上、2営業日以内にご返信いたします。</p>
 
-          <h2 class="about__subheading" data-animate="fade">未知の領域へ踏み出す、しなやかな知性を。</h2>
-          <p class="about__text" data-animate="fade">自ら問いを見つけ、豊かに学び続ける人へ。</p>
-          <p class="about__text" data-animate="fade">正解がすぐに手に入る今の時代だからこそ、「自ら考え、答えを導き出す」その道のりが、これまで以上に大切な意味を持つようになっています。</p>
-          <p class="about__text" data-animate="fade">私が大切にしているのは、目先のテストの点数という「結果」だけを急いで追い求めることではありません。私は、学びの「過程」そのものを何よりも重んじています。</p>
-          <p class="about__text" data-animate="fade">自ら問いを立て、迷いながらも自分なりの答えを見つけ出す。その豊かな試行錯誤のプロセスをじっくりと深めていけば、成績向上や志望校合格といった「結果」は、確かな実力として後からおのずとついてくるものだと信じているからです。</p>
+          <form action="#" method="post" novalidate>
 
-          <div class="about__divider" data-animate="fade"></div>
+            <!-- 1. お問い合わせの種類 -->
+            <div class="form-row" data-animate="fade">
+              <label class="form-label" for="inquiry-type">お問い合わせの種類<span class="required">※</span></label>
+              <select class="form-select" id="inquiry-type" name="inquiry_type" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="tutoring">入塾・家庭教師について</option>
+                <option value="online">オンライン授業について</option>
+                <option value="exam">受験相談のお申し込み</option>
+                <option value="other">その他・企業様からのお問い合わせ</option>
+              </select>
+            </div>
 
-          <h2 class="about__subheading" data-animate="fade">「これでいい」ではなく、「これがいい」と選びとる意志を。</h2>
-          <p class="about__text" data-animate="fade">日常の小さな言葉の中に、その人の未来は作られていきます。「〜でいい」と「〜がいい」。似て非なるこの二つの言葉には、大きな違いがあります。前者が現状へのささやかな「妥協」だとすれば、後者には自らの人生を切り拓く確かな「意志」が宿っています。</p>
-          <p class="about__text" data-animate="fade">私が子どもたちに手渡したいのは、誰かが決めた正解に「これでいい」と妥協する姿勢ではありません。どんな時も「これがいい」と自分の心で決断し、失敗を恐れず何度でも新しい世界へ挑戦し続けるための、しなやかな強さです。</p>
-          <p class="about__text" data-animate="fade">社会に出てからも一生使い続けられる『自走する力』は、そうした日々の小さな「意志」の積み重ねから生まれます。</p>
+            <!-- 2. ご氏名 -->
+            <div class="form-row" data-animate="fade">
+              <label class="form-label" for="name-sei">ご氏名<span class="required">※</span></label>
+              <div class="form-name-group">
+                <input type="text" class="form-input" id="name-sei" name="name_sei" placeholder="姓" required>
+                <input type="text" class="form-input" id="name-mei" name="name_mei" placeholder="名" required>
+              </div>
+            </div>
 
-          <div class="about__divider" data-animate="fade"></div>
+            <!-- 3. 学校名・学年 / 御社名 -->
+            <div class="form-row" data-animate="fade">
+              <label class="form-label" for="affiliation">学校名・学年 または<br>御社名</label>
+              <input type="text" class="form-input" id="affiliation" name="affiliation" placeholder="○○高校 2年 / ○○株式会社">
+            </div>
 
-          <h2 class="about__subheading" data-animate="fade">前に立つのではなく、斜め後ろでそっと寄り添う「学生ファースト」の姿勢</h2>
-          <p class="about__text" data-animate="fade">このような学びと挑戦を実現するために、私たちは「先生が前に立って一方的に答えを教える」というスタイルではなく、学びの主役である生徒のすぐ隣で歩幅を合わせる「伴走者（パートナー）」でありたいと考えています。</p>
-          <p class="about__text" data-animate="fade">生徒が「わからない」と立ち止まったとき、すぐに正解を渡すことはしません。その代わり、「どこまでは分かった？」「何がヒントになりそう？」と優しく問いかけ、生徒自身が思考の糸口を見つけられるよう、対話を通じてサポートします。</p>
-          <p class="about__text" data-animate="fade">洗練されたテクノロジーの環境と、安心できる人のつながり。その両方が揃うこの場所で、自分で仮説を立て、調べ、自分の言葉で説明する経験を重ねるうちに、生徒たちは少しずつ自分自身の足で力強く歩き始めます。</p>
-          <p class="about__text" data-animate="fade">山口県防府市から、未来を自由に、しなやかにデザインしていくための「心地よい学びの居場所」をお届けします。</p>
+            <!-- 4. メールアドレス -->
+            <div class="form-row" data-animate="fade">
+              <label class="form-label" for="email">メールアドレス<span class="required">※</span></label>
+              <input type="email" class="form-input" id="email" name="email" placeholder="sample@xxxxxx.com" required>
+            </div>
+
+            <!-- 5. 電話番号 -->
+            <div class="form-row" data-animate="fade">
+              <label class="form-label" for="phone">電話番号</label>
+              <input type="tel" class="form-input" id="phone" name="phone" placeholder="00-0000-0000">
+            </div>
+
+            <!-- 6. お問い合わせ内容 -->
+            <div class="form-row" data-animate="fade">
+              <label class="form-label" for="message">お問い合わせ内容<span class="required">※</span></label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="ご入力ください" required></textarea>
+            </div>
+
+            <!-- 7. プライバシーポリシー同意 -->
+            <div class="form-checkbox-row" data-animate="fade">
+              <label class="form-checkbox">
+                <input type="checkbox" name="privacy_agree" required>
+                <span><a href="/privacy.html" class="privacy-link" target="_blank">プライバシーポリシー</a>に同意する<span class="required">※</span></span>
+              </label>
+            </div>
+
+            <!-- 8. 送信ボタン -->
+            <div class="form-submit-wrap" data-animate="fade">
+              <button type="submit" class="form-submit">確認する</button>
+            </div>
+
+          </form>
         </div>
       </div>
     </section>
@@ -364,42 +581,19 @@
   <script>
     (function () {
       'use strict';
-
-      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Generic fade animation (IO-based)
-      document.querySelectorAll('[data-animate="fade"]').forEach(function (el) {
-        if (!prefersReduced) {
-          var obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
-          }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-          obs.observe(el);
-        } else { el.classList.add('is-visible'); }
-      });
-
-      // Mobile nav toggle
-      var toggle = document.querySelector('.nav-toggle');
-      var navList = document.querySelector('.main-nav__list');
-      if (toggle && navList) {
-        toggle.addEventListener('click', function () {
-          var expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          navList.style.display = expanded ? 'none' : 'flex';
-          navList.style.flexDirection = expanded ? '' : 'column';
-          navList.style.position = expanded ? '' : 'absolute';
-          navList.style.top = expanded ? '' : '72px';
-          navList.style.left = expanded ? '' : '0';
-          navList.style.right = expanded ? '' : '0';
-          navList.style.backgroundColor = expanded ? '' : 'var(--bg-paper)';
-          navList.style.padding = expanded ? '' : '24px var(--gutter)';
-          navList.style.gap = expanded ? '' : '20px';
-          navList.style.borderBottom = expanded ? '' : '1px solid var(--border-fine)';
-          navList.style.zIndex = expanded ? '' : '99';
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
         });
-      }
+      }, { threshold: 0.15 });
 
+      document.querySelectorAll('[data-animate="fade"]').forEach(function (el) {
+        observer.observe(el);
+      });
     })();
   </script>
-
 </body>
 </html>

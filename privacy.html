@@ -332,6 +332,14 @@
       transition: opacity var(--transition-fast);
     }
     .footer__privacy-link:hover { opacity: 0.6; }
+    .footer__instagram {
+      justify-self: end;
+      display: inline-flex; align-items: center;
+      color: var(--text-on-dark-muted);
+      transition: opacity var(--transition-fast);
+    }
+    .footer__instagram:hover { opacity: 0.6; }
+    .footer__instagram svg { width: 20px; height: 20px; }
 
     /* ========================================
        RESPONSIVE
@@ -343,6 +351,7 @@
       .footer__nav-list { flex-wrap: wrap; gap: 16px 24px; }
       .footer__bottom { grid-template-columns: 1fr; justify-items: center; gap: 12px; text-align: center; }
       .footer__bottom > span { justify-self: center; }
+      .footer__instagram { justify-self: center; }
     }
 
     @media (max-width: 480px) {
@@ -383,7 +392,7 @@
           <li><a href="/price.html" class="main-nav__link">price</a></li>
         </ul>
         <div class="nav-cta-wrap">
-          <a href="#" class="btn btn--primary"><span>contact</span></a>
+          <a href="/contact.html" class="btn btn--primary"><span>contact</span></a>
           <a href="#" class="btn btn--icon" aria-label="More options">
             <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4L6 8L10 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -463,13 +472,16 @@
             <li><a href="/service.html">service</a></li>
             <li><a href="/text.html">text</a></li>
             <li><a href="/price.html">price</a></li>
-            <li><a href="#">contact</a></li>
+            <li><a href="/contact.html">contact</a></li>
           </ul>
         </nav>
       </div>
       <div class="footer__bottom">
         <span>&copy; 2026 GLC. All rights reserved.</span>
         <a href="/privacy.html" class="footer__privacy-link">Privacy Policy</a>
+        <a href="https://www.instagram.com/glceducation_official?igsh=MXBleTY2d3Vqdm12cw%3D%3D&utm_source=qr" class="footer__instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
       </div>
     </div>
   </footer>
