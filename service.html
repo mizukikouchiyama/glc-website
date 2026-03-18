@@ -202,6 +202,19 @@
     }
 
     /* ========================================
+       SERVICE CARD IMAGE
+       ======================================== */
+    .service-card__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-top: clamp(28px, 3.5vw, 40px);
+    }
+
+    /* ========================================
        FOOTER
        ======================================== */
     .site-footer { background-color: var(--bg-dark); color: var(--text-on-dark); padding: clamp(48px, 6vw, 72px) 0 clamp(32px, 4vw, 48px); }
@@ -305,6 +318,7 @@
                   </div>
                 </div>
               </div>
+              <img src="/assets/images/service-mizuki.png" alt="バーチャル作業部屋『みづきの部屋』のスクリーンショット" class="service-card__image" loading="lazy">
             </article>
 
             <!-- Service 2 -->
@@ -330,6 +344,7 @@
                   </div>
                 </div>
               </div>
+              <img src="/assets/images/service-korean-masked.png" alt="韓国語学習サポートのDiscord画面" class="service-card__image" loading="lazy">
             </article>
 
             <!-- Service 3 -->
@@ -348,6 +363,7 @@
                   </div>
                 </div>
               </div>
+              <img src="/assets/images/service-miju.png" alt="総合全顔診断ツール『Miju』の画面" class="service-card__image" loading="lazy">
             </article>
 
           </div>
