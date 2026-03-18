@@ -424,7 +424,7 @@
     /* ========================================
        LATEST RELEASES / CARDS
        ======================================== */
-    .releases { padding: clamp(60px, 8vw, 100px) 0; }
+    .releases { padding: clamp(60px, 8vw, 100px) 0 clamp(80px, 10vw, 140px); }
 
     .releases__heading {
       font-family: var(--font-sans);
@@ -503,50 +503,6 @@
     .btn--card:hover .arrow, .btn--card:focus-visible .arrow { transform: translateX(3px); }
 
     /* ========================================
-       MISSION / LINKS SECTION
-       ======================================== */
-    .mission { padding: clamp(60px, 8vw, 100px) 0 clamp(80px, 10vw, 120px); }
-
-    .mission__grid {
-      display: grid; grid-template-columns: 1fr 1.5fr;
-      gap: clamp(40px, 6vw, 80px); align-items: start;
-    }
-
-    .mission__statement {
-      font-family: var(--font-sans);
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 800; line-height: 1.35; color: var(--text-primary);
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
-    }
-    .mission__statement.is-visible { opacity: 1; transform: translateY(0); }
-
-    .mission__links { display: flex; flex-direction: column; }
-
-    .mission__link-item {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: clamp(16px, 2vw, 22px) 0;
-      border-top: 1px solid var(--border-fine);
-      transition: opacity var(--transition-fast);
-      opacity: 0; transform: translateY(16px);
-    }
-    .mission__link-item.is-visible {
-      opacity: 1; transform: translateY(0);
-      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
-    }
-    .mission__link-item:last-child { border-bottom: 1px solid var(--border-fine); }
-    .mission__link-item:hover { opacity: 0.65; }
-
-    .mission__link-title {
-      font-family: var(--font-serif);
-      font-size: clamp(0.95rem, 1.3vw, 1.1rem); color: var(--text-primary);
-    }
-    .mission__link-category {
-      font-family: var(--font-sans); font-size: 0.82rem;
-      font-weight: 500; color: var(--text-secondary);
-    }
-
-    /* ========================================
        FOOTER
        ======================================== */
     .site-footer {
@@ -607,7 +563,7 @@
       .hero__lead { max-width: 100%; }
       .hero__heading { white-space: normal; }
       .card { padding: clamp(28px, 4vw, 36px) clamp(24px, 4vw, 32px); }
-      .mission__grid { grid-template-columns: 1fr; gap: 36px; }
+
       .footer__nav-list { flex-wrap: wrap; gap: 16px 24px; }
       .footer__bottom { grid-template-columns: 1fr; justify-items: center; gap: 12px; text-align: center; }
       .footer__bottom > span { justify-self: center; }
@@ -634,7 +590,7 @@
       }
       .hero__heading .word, .hero__lead,
       .feature-dark__title, .feature-dark__subtitle, .feature-dark__cta,
-      .releases__heading, .card, .mission__statement, .mission__link-item {
+      .releases__heading, .card {
         opacity: 1 !important; transform: none !important;
       }
       .feature-dark__visual {
@@ -746,21 +702,6 @@
       </div>
     </section>
 
-    <!-- MISSION / LINKS -->
-    <section class="mission" aria-labelledby="mission-heading">
-      <div class="container">
-        <div class="mission__grid">
-          <h2 class="mission__statement" id="mission-heading" data-animate="fade">
-            At GLC, we deliver strategic intelligence to serve long-term prosperity.
-          </h2>
-          <div class="mission__links" data-animate="stagger-links">
-            <a href="#" class="mission__link-item"><span class="mission__link-title">Core principles on decision integrity</span><span class="mission__link-category">Perspectives</span></a>
-            <a href="#" class="mission__link-item"><span class="mission__link-title">GLC's Responsible Advisory Policy</span><span class="mission__link-category">Governance</span></a>
-            <a href="#" class="mission__link-item"><span class="mission__link-title">GLC Academy: Build and Learn with Us</span><span class="mission__link-category">Education</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -1035,22 +976,6 @@
           }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
           cardObs.observe(cardGrid);
         } else { cards.forEach(function (c) { c.classList.add('is-visible'); }); }
-      }
-
-      var linkCont = document.querySelector('[data-animate="stagger-links"]');
-      if (linkCont) {
-        var links = linkCont.querySelectorAll('.mission__link-item');
-        if (!prefersReduced) {
-          var linkObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                links.forEach(function (l, i) { setTimeout(function () { l.classList.add('is-visible'); }, i * 120); });
-                linkObs.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
-          linkObs.observe(linkCont);
-        } else { links.forEach(function (l) { l.classList.add('is-visible'); }); }
       }
 
       // ────────────────────────────────────────
