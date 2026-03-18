@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GLC — 料金プランのご案内。総合学習サポートプラン。">
-  <title>Price — GLC</title>
+  <meta name="description" content="GLC — プライバシーポリシー（個人情報保護方針）">
+  <title>Privacy Policy — GLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -142,153 +142,158 @@
     }
 
     /* ========================================
-       PRICE PAGE
+       PRIVACY POLICY SECTION
        ======================================== */
-    .price-page {
+    .privacy {
       padding: clamp(80px, 10vw, 140px) 0;
     }
 
-    .price-page__inner {
-      max-width: 760px;
+    .privacy__inner {
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .price-page__heading {
+    .privacy__heading {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       font-weight: 400;
       color: var(--text-primary);
-      margin-bottom: clamp(24px, 3vw, 36px);
+      margin-bottom: clamp(32px, 4vw, 48px);
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
     }
-    .price-page__heading.is-visible { opacity: 1; transform: translateY(0); }
+    .privacy__heading.is-visible { opacity: 1; transform: translateY(0); }
 
-    .price-page__lead {
+    .privacy__lead {
       font-family: var(--font-sans);
-      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
-      font-weight: 400;
-      line-height: 2;
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      line-height: 1.9;
       color: var(--text-secondary);
       margin-bottom: clamp(48px, 6vw, 72px);
       opacity: 0; transform: translateY(20px);
-      transition: opacity 0.7s var(--ease-smooth) 0.1s, transform 0.7s var(--ease-smooth) 0.1s;
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
     }
-    .price-page__lead.is-visible { opacity: 1; transform: translateY(0); }
+    .privacy__lead.is-visible { opacity: 1; transform: translateY(0); }
 
-    /* Plan Card */
-    .plan-card {
-      background-color: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: clamp(36px, 5vw, 56px);
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.8s var(--ease-smooth) 0.15s, transform 0.8s var(--ease-smooth) 0.15s;
-    }
-    .plan-card.is-visible { opacity: 1; transform: translateY(0); }
-
-    .plan-card__label {
+    .privacy__subheading {
       font-family: var(--font-sans);
-      font-size: 0.75rem;
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
       font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .plan-card__title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 400;
+      line-height: 1.5;
       color: var(--text-primary);
-      margin-bottom: clamp(20px, 2.5vw, 28px);
+      margin-bottom: clamp(24px, 3vw, 36px);
+      margin-top: clamp(48px, 6vw, 72px);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
     }
+    .privacy__subheading:first-of-type { margin-top: 0; }
+    .privacy__subheading.is-visible { opacity: 1; transform: translateY(0); }
 
-    .plan-card__price-wrap {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .plan-card__price {
-      font-family: var(--font-sans);
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-    }
-
-    .plan-card__price-period {
-      font-family: var(--font-sans);
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
-    .plan-card__price-note {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: clamp(32px, 4vw, 48px);
-    }
-
-    .plan-card__divider {
-      width: 100%;
-      height: 1px;
-      background-color: var(--border-fine);
-      margin-bottom: clamp(32px, 4vw, 48px);
-    }
-
-    .plan-card__features-title {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: clamp(20px, 2.5vw, 28px);
-    }
-
-    .plan-card__features {
+    .privacy__principles {
+      list-style: none;
+      counter-reset: principle;
       display: flex;
       flex-direction: column;
-      gap: clamp(20px, 2.5vw, 28px);
+      gap: clamp(28px, 3.5vw, 40px);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .privacy__principles.is-visible { opacity: 1; transform: translateY(0); }
+
+    .privacy__principle {
+      counter-increment: principle;
+      padding: clamp(24px, 3vw, 36px);
+      background-color: var(--bg-card);
+      border-radius: var(--radius-md);
     }
 
-    .plan-card__feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .plan-card__feature-icon {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      margin-top: 2px;
-      color: var(--text-primary);
-    }
-
-    .plan-card__feature-content {
-      flex: 1;
-    }
-
-    .plan-card__feature-label {
+    .privacy__principle-title {
       font-family: var(--font-sans);
-      font-size: clamp(0.92rem, 1.1vw, 1rem);
-      font-weight: 600;
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 4px;
+      margin-bottom: 12px;
+      line-height: 1.5;
     }
 
-    .plan-card__feature-desc {
+    .privacy__principle-title::before {
+      content: counter(principle) ". ";
+      font-weight: 800;
+    }
+
+    .privacy__principle-desc {
       font-family: var(--font-sans);
-      font-size: clamp(0.82rem, 0.95vw, 0.9rem);
-      font-weight: 400;
-      line-height: 1.8;
+      font-size: clamp(0.88rem, 1vw, 0.95rem);
+      line-height: 1.9;
       color: var(--text-secondary);
     }
+
+    .privacy__section-title {
+      font-family: var(--font-sans);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: clamp(48px, 6vw, 64px);
+      margin-bottom: clamp(16px, 2vw, 24px);
+      padding-top: clamp(32px, 4vw, 48px);
+      border-top: 1px solid var(--border-fine);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .privacy__section-title.is-visible { opacity: 1; transform: translateY(0); }
+
+    .privacy__text {
+      font-family: var(--font-sans);
+      font-size: clamp(0.88rem, 1vw, 0.95rem);
+      line-height: 1.9;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .privacy__text.is-visible { opacity: 1; transform: translateY(0); }
+
+    .privacy__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .privacy__list.is-visible { opacity: 1; transform: translateY(0); }
+
+    .privacy__list li {
+      font-family: var(--font-sans);
+      font-size: clamp(0.88rem, 1vw, 0.95rem);
+      line-height: 1.9;
+      color: var(--text-secondary);
+      padding-left: 1.2em;
+      position: relative;
+    }
+
+    .privacy__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--text-muted);
+    }
+
+    .privacy__contact {
+      font-family: var(--font-sans);
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+    }
+    .privacy__contact.is-visible { opacity: 1; transform: translateY(0); }
 
     /* ========================================
        FOOTER
@@ -342,7 +347,6 @@
 
     @media (max-width: 480px) {
       .nav-cta-wrap .btn--primary span { display: none; }
-      .plan-card { padding: clamp(24px, 5vw, 36px); }
     }
 
     :focus-visible { outline: 2px solid var(--text-primary); outline-offset: 3px; border-radius: 3px; }
@@ -358,7 +362,9 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
-      .price-page__heading, .price-page__lead, .plan-card {
+      .privacy__heading, .privacy__lead, .privacy__subheading,
+      .privacy__principles, .privacy__section-title, .privacy__text,
+      .privacy__list, .privacy__contact {
         opacity: 1 !important; transform: none !important;
       }
     }
@@ -390,79 +396,55 @@
   </header>
 
   <main>
-    <section class="price-page" aria-labelledby="price-heading">
+    <section class="privacy" aria-labelledby="privacy-heading">
       <div class="container">
-        <div class="price-page__inner">
-          <h1 class="price-page__heading" id="price-heading" data-animate="fade">Price</h1>
-          <p class="price-page__lead" data-animate="fade">学びへの投資が、確かな未来をつくる。<br>すべてのサービスを含む、シンプルなワンプランです。</p>
+        <div class="privacy__inner">
+          <h1 class="privacy__heading" id="privacy-heading" data-animate="fade">プライバシーポリシー（個人情報保護方針）</h1>
 
-          <div class="plan-card" data-animate="fade">
-            <p class="plan-card__label">All-in-one Plan</p>
-            <h2 class="plan-card__title">総合学習サポートプラン</h2>
+          <p class="privacy__lead" data-animate="fade">私たちGLCは、教育サービスを提供するにあたり、保護者および学生の皆さまからお預かりする大切なデータを守り、正しく活用することが何より重要であると考えています。私たちは以下の5つの原則に基づき、皆さまのプライバシーと権利を尊重し、透明性の高いデータ運用を行います。</p>
 
-            <div class="plan-card__price-wrap">
-              <span class="plan-card__price">¥30,000</span>
-              <span class="plan-card__price-period">/ 月額</span>
-            </div>
-            <p class="plan-card__price-note">$189 USD 相当</p>
+          <h2 class="privacy__subheading" data-animate="fade">私たちのデータ運用 5つの原則</h2>
 
-            <div class="plan-card__divider"></div>
+          <ol class="privacy__principles" data-animate="fade">
+            <li class="privacy__principle">
+              <h3 class="privacy__principle-title">保護者・学生の皆さまへの利益の提供を第一の目的とします</h3>
+              <p class="privacy__principle-desc">お預かりした学習履歴や診断データは、生徒一人ひとりの学びの最適化や、より良い学習環境の提供など、皆さまの利益と成長のためにのみ活用します。</p>
+            </li>
+            <li class="privacy__principle">
+              <h3 class="privacy__principle-title">透明性を重視してデータの取り扱いを行います</h3>
+              <p class="privacy__principle-desc">「どのようなデータを」「何のために」取得し使用しているのかを常に分かりやすく明示し、ブラックボックス化しない誠実な運用を行います。</p>
+            </li>
+            <li class="privacy__principle">
+              <h3 class="privacy__principle-title">保護者・学生の皆さまの権利や利益を侵害しないように努めます</h3>
+              <p class="privacy__principle-desc">データの利用によって、皆さまが不利益を被ることや、意図しない不快な体験をすることがないよう、倫理的な観点から常に配慮と点検を行います。</p>
+            </li>
+            <li class="privacy__principle">
+              <h3 class="privacy__principle-title">提供していただいたデータは保護者・学生の皆さまのものです</h3>
+              <p class="privacy__principle-desc">私たちはデータをお預かりしている立場にすぎません。ご自身のデータの開示、訂正、削除を希望される場合は、速やかにかつ誠実に対応いたします。</p>
+            </li>
+            <li class="privacy__principle">
+              <h3 class="privacy__principle-title">適切なセキュリティ管理体制でデータを保護・管理します</h3>
+              <p class="privacy__principle-desc">皆さまの大切な情報を不正アクセス、紛失、漏洩から守るため、最新のセキュリティ技術と厳格な管理体制をもって安全に保管します。</p>
+            </li>
+          </ol>
 
-            <p class="plan-card__features-title">含まれるサービス</p>
+          <h3 class="privacy__section-title" data-animate="fade">1. 取得する情報および利用目的</h3>
+          <p class="privacy__text" data-animate="fade">当サービス（家庭教師、オンライン授業、Miju等の診断ツールを含む）において取得した個人情報（氏名、連絡先、学習状況等）は、以下の目的の範囲内で利用いたします。</p>
+          <ul class="privacy__list" data-animate="fade">
+            <li>授業および学習サポートの提供、管理</li>
+            <li>お問い合わせへの対応、必要なご連絡</li>
+            <li>サービスの品質向上および新しい学習体験の開発</li>
+          </ul>
 
-            <div class="plan-card__features">
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">個別指導</p>
-                  <p class="plan-card__feature-desc">週1〜2回のハイブリッド授業（※スケジュール要相談・先着順）</p>
-                </div>
-              </div>
+          <h3 class="privacy__section-title" data-animate="fade">2. 第三者への提供</h3>
+          <p class="privacy__text" data-animate="fade">法令に基づく場合や、生命・財産の保護のために必要な場合を除き、あらかじめご本人の同意を得ることなく、個人情報を第三者に提供することはいたしません。</p>
 
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">テスト対策</p>
-                  <p class="plan-card__feature-desc">テスト週間の土日は追加料金なしで特別授業を実施（大切な本番に向けて最後まで伴走します）</p>
-                </div>
-              </div>
+          <h3 class="privacy__section-title" data-animate="fade">3. 個人情報の開示・訂正・削除</h3>
+          <p class="privacy__text" data-animate="fade">ご本人または保護者さまより、個人情報の開示、訂正、追加、削除、利用停止のご請求があった場合は、ご本人確認の上、速やかに対応いたします。</p>
 
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">利用範囲</p>
-                  <p class="plan-card__feature-desc">全てのサービスを追加料金なしで利用可能</p>
-                </div>
-              </div>
-
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">専用教材</p>
-                  <p class="plan-card__feature-desc">弱点克服のためのオリジナル対策資料を作成（PDF・紙媒体から選択可）</p>
-                </div>
-              </div>
-
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">質問対応</p>
-                  <p class="plan-card__feature-desc">Slackを活用した24時間いつでも質問できる安心サポート</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <h3 class="privacy__section-title" data-animate="fade">4. お問い合わせ窓口</h3>
+          <p class="privacy__text" data-animate="fade">本ポリシーやデータの取り扱いに関するご質問、ご要望は、下記までお問い合わせください。</p>
+          <p class="privacy__contact" data-animate="fade">glcstaff.official@gmail.com</p>
         </div>
       </div>
     </section>
@@ -495,42 +477,19 @@
   <script>
     (function () {
       'use strict';
-
-      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Generic fade animation (IO-based)
-      document.querySelectorAll('[data-animate="fade"]').forEach(function (el) {
-        if (!prefersReduced) {
-          var obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
-          }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-          obs.observe(el);
-        } else { el.classList.add('is-visible'); }
-      });
-
-      // Mobile nav toggle
-      var toggle = document.querySelector('.nav-toggle');
-      var navList = document.querySelector('.main-nav__list');
-      if (toggle && navList) {
-        toggle.addEventListener('click', function () {
-          var expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          navList.style.display = expanded ? 'none' : 'flex';
-          navList.style.flexDirection = expanded ? '' : 'column';
-          navList.style.position = expanded ? '' : 'absolute';
-          navList.style.top = expanded ? '' : '72px';
-          navList.style.left = expanded ? '' : '0';
-          navList.style.right = expanded ? '' : '0';
-          navList.style.backgroundColor = expanded ? '' : 'var(--bg-paper)';
-          navList.style.padding = expanded ? '' : '24px var(--gutter)';
-          navList.style.gap = expanded ? '' : '20px';
-          navList.style.borderBottom = expanded ? '' : '1px solid var(--border-fine)';
-          navList.style.zIndex = expanded ? '' : '99';
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
         });
-      }
+      }, { threshold: 0.15 });
 
+      document.querySelectorAll('[data-animate="fade"]').forEach(function (el) {
+        observer.observe(el);
+      });
     })();
   </script>
-
 </body>
 </html>
