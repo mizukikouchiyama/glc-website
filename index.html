@@ -160,6 +160,10 @@
       position: relative;
     }
 
+    .hero .container {
+      max-width: none;
+    }
+
     .hero::before {
       content: ''; position: absolute;
       top: clamp(32px, 4vw, 56px); right: var(--gutter);
@@ -168,10 +172,10 @@
     }
 
     .hero__grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(60px, 10vw, 160px);
-      align-items: end;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .hero__heading {
@@ -179,6 +183,7 @@
       font-size: clamp(3.2rem, 7.5vw, 6.5rem);
       font-weight: 900; line-height: 1.02;
       letter-spacing: -0.045em; color: var(--text-primary);
+      white-space: nowrap;
     }
 
     .hero__heading .word {
@@ -210,8 +215,9 @@
       font-family: var(--font-serif);
       font-size: clamp(1.1rem, 1.6vw, 1.35rem);
       line-height: 1.6; letter-spacing: -0.01em;
-      color: var(--text-primary); max-width: 420px;
-      padding-bottom: 12px;
+      color: var(--text-primary);
+      margin-top: clamp(24px, 3vw, 40px);
+      text-align: center;
       opacity: 0; transform: translateY(20px);
       transition: opacity 0.9s var(--ease-smooth) 0.6s, transform 0.9s var(--ease-smooth) 0.6s;
     }
@@ -545,8 +551,9 @@
       .main-nav__list { display: none; }
       .nav-toggle { display: flex; }
       .hero::before { display: none; }
-      .hero__grid { grid-template-columns: 1fr; gap: 32px; align-items: start; }
+      .hero__grid { gap: 32px; align-items: center; }
       .hero__lead { max-width: 100%; }
+      .hero__heading { white-space: normal; }
       .card-grid { grid-template-columns: 1fr; }
       .card:last-child { grid-column: auto; }
       .card { min-height: auto; }
@@ -621,14 +628,11 @@
       <div class="container">
         <div class="hero__grid">
           <h1 class="hero__heading" id="hero-heading" data-animate="words">
-            Strategic <span class="hero__heading-underline">insight</span> and
-            <span class="hero__heading-underline">solutions</span> that put
-            <span class="hero__rotate-wrap" data-rotate='["clarity","vision","strategy","precision"]' aria-label="clarity">clarity</span> at the frontier
+            Focus on your
+            <span class="hero__rotate-wrap" data-rotate='["growth","potential","future"]' aria-label="growth">growth</span>
           </h1>
           <p class="hero__lead">
-            Complex decisions demand exceptional clarity.
-            GLC is a strategic intelligence firm dedicated to
-            illuminating possibilities and mitigating uncertainty.
+            対面指導の安心感とオンラインの利便性を両立。<br>防府市を中心に、家庭教師×オンラインのハイブリッド授業を提供しています。
           </p>
         </div>
       </div>
