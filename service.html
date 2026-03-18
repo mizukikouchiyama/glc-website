@@ -405,6 +405,11 @@
         } else { el.classList.add('is-visible'); }
       });
 
+      // Hide broken images gracefully
+      document.querySelectorAll('.service-card__image').forEach(function (img) {
+        img.addEventListener('error', function () { img.style.display = 'none'; });
+      });
+
       var toggle = document.querySelector('.nav-toggle');
       var navList = document.querySelector('.main-nav__list');
       if (toggle && navList) {
