@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GLC — 料金プランのご案内。総合学習サポートプラン。">
-  <title>Price — GLC</title>
+  <meta name="description" content="GLC — 授業から教材完成までの流れ。お子さま一人ひとりに最適化された教材をお届けします。">
+  <title>Class — GLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -142,152 +142,105 @@
     }
 
     /* ========================================
-       PRICE PAGE
+       CLASS SECTION
        ======================================== */
-    .price-page {
-      padding: clamp(80px, 10vw, 140px) 0;
-    }
+    .class-flow { padding: clamp(80px, 10vw, 140px) 0; }
 
-    .price-page__inner {
+    .class-flow__inner {
       max-width: 760px;
       margin: 0 auto;
     }
 
-    .price-page__heading {
+    .class-flow__heading {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       font-weight: 400;
       color: var(--text-primary);
-      margin-bottom: clamp(24px, 3vw, 36px);
+      margin-bottom: clamp(12px, 1.5vw, 16px);
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
     }
-    .price-page__heading.is-visible { opacity: 1; transform: translateY(0); }
+    .class-flow__heading.is-visible { opacity: 1; transform: translateY(0); }
 
-    .price-page__lead {
+    .class-flow__subtitle {
       font-family: var(--font-sans);
-      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
-      font-weight: 400;
-      line-height: 2;
-      color: var(--text-secondary);
-      margin-bottom: clamp(48px, 6vw, 72px);
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.7s var(--ease-smooth) 0.1s, transform 0.7s var(--ease-smooth) 0.1s;
-    }
-    .price-page__lead.is-visible { opacity: 1; transform: translateY(0); }
-
-    /* Plan Card */
-    .plan-card {
-      background-color: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: clamp(36px, 5vw, 56px);
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.8s var(--ease-smooth) 0.15s, transform 0.8s var(--ease-smooth) 0.15s;
-    }
-    .plan-card.is-visible { opacity: 1; transform: translateY(0); }
-
-    .plan-card__label {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .plan-card__title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 400;
-      color: var(--text-primary);
-      margin-bottom: clamp(20px, 2.5vw, 28px);
-    }
-
-    .plan-card__price-wrap {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .plan-card__price {
-      font-family: var(--font-sans);
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-    }
-
-    .plan-card__price-period {
-      font-family: var(--font-sans);
-      font-size: 0.88rem;
+      font-size: clamp(0.88rem, 1vw, 0.95rem);
       font-weight: 500;
+      letter-spacing: 0.06em;
       color: var(--text-muted);
+      margin-bottom: clamp(16px, 2vw, 24px);
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.7s var(--ease-smooth) 0.08s, transform 0.7s var(--ease-smooth) 0.08s;
     }
+    .class-flow__subtitle.is-visible { opacity: 1; transform: translateY(0); }
 
-    .plan-card__price-note {
+    .class-flow__lead {
       font-family: var(--font-sans);
-      font-size: 0.85rem;
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      line-height: 1.9;
       color: var(--text-secondary);
-      margin-bottom: clamp(32px, 4vw, 48px);
+      margin-bottom: clamp(56px, 7vw, 80px);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
     }
+    .class-flow__lead.is-visible { opacity: 1; transform: translateY(0); }
 
-    .plan-card__divider {
-      width: 100%;
-      height: 1px;
-      background-color: var(--border-fine);
-      margin-bottom: clamp(32px, 4vw, 48px);
-    }
-
-    .plan-card__features-title {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: clamp(20px, 2.5vw, 28px);
-    }
-
-    .plan-card__features {
+    .class-flow__steps {
       display: flex;
       flex-direction: column;
-      gap: clamp(20px, 2.5vw, 28px);
+      align-items: center;
+      gap: 0;
     }
 
-    .plan-card__feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
+    .class-flow__step {
+      width: 100%;
+      background-color: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: clamp(32px, 4vw, 48px);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
     }
+    .class-flow__step.is-visible { opacity: 1; transform: translateY(0); }
 
-    .plan-card__feature-icon {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      margin-top: 2px;
-      color: var(--text-primary);
-    }
-
-    .plan-card__feature-content {
-      flex: 1;
-    }
-
-    .plan-card__feature-label {
+    .class-flow__step-label {
       font-family: var(--font-sans);
-      font-size: clamp(0.92rem, 1.1vw, 1rem);
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
     }
 
-    .plan-card__feature-desc {
-      font-family: var(--font-sans);
-      font-size: clamp(0.82rem, 0.95vw, 0.9rem);
+    .class-flow__step-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
       font-weight: 400;
-      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .class-flow__step-desc {
+      font-family: var(--font-sans);
+      font-size: clamp(0.88rem, 1vw, 0.95rem);
+      line-height: 1.9;
       color: var(--text-secondary);
+    }
+
+    .class-flow__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(20px, 2.5vw, 32px) 0;
+      color: var(--text-muted);
+      opacity: 0;
+      transition: opacity 0.5s var(--ease-smooth);
+    }
+    .class-flow__arrow.is-visible { opacity: 1; }
+    .class-flow__arrow svg {
+      width: 24px;
+      height: 24px;
     }
 
     /* ========================================
@@ -351,7 +304,6 @@
 
     @media (max-width: 480px) {
       .nav-cta-wrap .btn--primary span { display: none; }
-      .plan-card { padding: clamp(24px, 5vw, 36px); }
     }
 
     :focus-visible { outline: 2px solid var(--text-primary); outline-offset: 3px; border-radius: 3px; }
@@ -367,7 +319,7 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
-      .price-page__heading, .price-page__lead, .plan-card {
+      .class-flow__heading, .class-flow__subtitle, .class-flow__lead, .class-flow__step, .class-flow__arrow {
         opacity: 1 !important; transform: none !important;
       }
     }
@@ -401,79 +353,49 @@
   </header>
 
   <main>
-    <section class="price-page" aria-labelledby="price-heading">
+    <section class="class-flow" aria-labelledby="class-heading">
       <div class="container">
-        <div class="price-page__inner">
-          <h1 class="price-page__heading" id="price-heading" data-animate="fade">Price</h1>
-          <p class="price-page__lead" data-animate="fade">学びへの投資が、確かな未来をつくる。<br>すべてのサービスを含む、シンプルなワンプランです。</p>
+        <div class="class-flow__inner">
+          <h1 class="class-flow__heading" id="class-heading" data-animate="fade">Class</h1>
+          <p class="class-flow__subtitle" data-animate="fade">授業から教材完成の流れ</p>
+          <p class="class-flow__lead" data-animate="fade">お子さま一人ひとりに最適化された教材をお届けします</p>
 
-          <div class="plan-card" data-animate="fade">
-            <p class="plan-card__label">All-in-one Plan</p>
-            <h2 class="plan-card__title">総合学習サポートプラン</h2>
-
-            <div class="plan-card__price-wrap">
-              <span class="plan-card__price">¥30,000</span>
-              <span class="plan-card__price-period">/ 月額</span>
+          <div class="class-flow__steps">
+            <div class="class-flow__step" data-animate="fade">
+              <div class="class-flow__step-label">Step 1</div>
+              <h2 class="class-flow__step-title">授業後 ー 生徒カルテを記録</h2>
+              <p class="class-flow__step-desc">授業で「できたこと」「まだ課題なこと」「次回やること」を一人ひとり丁寧に記録します</p>
             </div>
-            <p class="plan-card__price-note">$189 USD 相当</p>
 
-            <div class="plan-card__divider"></div>
+            <div class="class-flow__arrow" data-animate="fade">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
 
-            <p class="plan-card__features-title">含まれるサービス</p>
+            <div class="class-flow__step" data-animate="fade">
+              <div class="class-flow__step-label">Step 2</div>
+              <h2 class="class-flow__step-title">学習データに基づく演習問題の編成</h2>
+              <p class="class-flow__step-desc">カルテの記録と独自のシステムを活用し、弱点を重点的にカバーする最適な演習問題を抽出・編成します（基礎→標準→応用の段階構成）</p>
+            </div>
 
-            <div class="plan-card__features">
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">個別指導</p>
-                  <p class="plan-card__feature-desc">週1〜2回のハイブリッド授業（※スケジュール要相談・先着順）</p>
-                </div>
-              </div>
+            <div class="class-flow__arrow" data-animate="fade">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
 
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">テスト対策</p>
-                  <p class="plan-card__feature-desc">テスト週間の土日は追加料金なしで特別授業を実施（大切な本番に向けて最後まで伴走します）</p>
-                </div>
-              </div>
+            <div class="class-flow__step" data-animate="fade">
+              <div class="class-flow__step-label">Step 3</div>
+              <h2 class="class-flow__step-title">講師の目による最終確認・承認</h2>
+              <p class="class-flow__step-desc">編成された問題リストをプロの講師が必ず確認。一人ひとりの理解度に合わせて難易度や方針の微調整を行い、品質を完全に担保したうえで次のステップへ進めます</p>
+            </div>
 
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">利用範囲</p>
-                  <p class="plan-card__feature-desc">全てのサービスを追加料金なしで利用可能</p>
-                </div>
-              </div>
+            <div class="class-flow__arrow" data-animate="fade">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
 
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">専用教材</p>
-                  <p class="plan-card__feature-desc">弱点克服のためのオリジナル対策資料を作成（PDF・紙媒体から選択可）</p>
-                </div>
-              </div>
-
-              <div class="plan-card__feature">
-                <svg class="plan-card__feature-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="plan-card__feature-content">
-                  <p class="plan-card__feature-label">質問対応</p>
-                  <p class="plan-card__feature-desc">Slackを活用した24時間いつでも質問できる安心サポート</p>
-                </div>
-              </div>
+            <div class="class-flow__step" data-animate="fade">
+              <div class="class-flow__step-label">Step 4</div>
+              <h2 class="class-flow__step-title">完成 ー お子さま専用のプリントをお届け</h2>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -514,7 +436,6 @@
 
       var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // Generic fade animation (IO-based)
       document.querySelectorAll('[data-animate="fade"]').forEach(function (el) {
         if (!prefersReduced) {
           var obs = new IntersectionObserver(function (entries) {
@@ -524,7 +445,6 @@
         } else { el.classList.add('is-visible'); }
       });
 
-      // Mobile nav toggle
       var toggle = document.querySelector('.nav-toggle');
       var navList = document.querySelector('.main-nav__list');
       if (toggle && navList) {
