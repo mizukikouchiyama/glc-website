@@ -555,9 +555,86 @@
       .footer__top { flex-direction: column; gap: 40px; }
     }
 
+    /* ========================================
+       MOBILE DRAWER (default: hidden on PC)
+       ======================================== */
+    .mobile-overlay { display: none; }
+    .mobile-drawer { display: none; }
+
     @media (max-width: 768px) {
+      .site-header .container { height: 60px; }
       .main-nav__list { display: none; }
+      .nav-cta-wrap { display: none; }
       .nav-toggle { display: flex; }
+
+      .nav-toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+      .nav-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      .mobile-overlay {
+        display: block; position: fixed; inset: 0;
+        background-color: rgba(0, 0, 0, 0.4); z-index: 998;
+        opacity: 0; visibility: hidden;
+        transition: opacity 350ms var(--ease-standard), visibility 350ms var(--ease-standard);
+        touch-action: none; -webkit-tap-highlight-color: transparent;
+      }
+      .mobile-overlay.is-active { opacity: 1; visibility: visible; }
+
+      .mobile-drawer {
+        display: flex; flex-direction: column; position: fixed;
+        top: 0; right: 0; width: min(320px, 85vw); height: 100dvh;
+        background-color: var(--bg-paper); z-index: 999;
+        padding: 0 clamp(24px, 5vw, 36px);
+        transform: translateX(100%);
+        transition: transform 350ms var(--ease-smooth);
+        overflow-y: auto; -webkit-overflow-scrolling: touch;
+      }
+      .mobile-drawer.is-active { transform: translateX(0); }
+
+      .mobile-drawer__header {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 60px; flex-shrink: 0;
+        border-bottom: 1px solid var(--border-fine);
+        margin: 0 calc(-1 * clamp(24px, 5vw, 36px));
+        padding: 0 clamp(24px, 5vw, 36px);
+      }
+      .mobile-drawer__logo {
+        font-family: var(--font-sans); font-size: 1.25rem; font-weight: 800;
+        letter-spacing: 0.18em; text-transform: uppercase;
+        color: var(--text-primary); user-select: none;
+      }
+      .mobile-drawer__close {
+        display: flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px; color: var(--text-primary);
+        border-radius: var(--radius-pill); transition: opacity var(--transition-fast);
+      }
+      .mobile-drawer__close:hover { opacity: 0.6; }
+      .mobile-drawer__close svg { width: 20px; height: 20px; }
+
+      .mobile-drawer__nav {
+        flex: 1; display: flex; flex-direction: column; gap: 4px;
+        padding: clamp(24px, 4vw, 36px) 0;
+      }
+      .mobile-drawer__link {
+        font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600;
+        color: var(--text-primary); letter-spacing: 0.04em;
+        padding: 14px 0; border-bottom: 1px solid var(--border-fine);
+        transition: opacity var(--transition-fast);
+        min-height: 48px; display: flex; align-items: center;
+      }
+      .mobile-drawer__link:hover { opacity: 0.6; }
+
+      .mobile-drawer__cta { flex-shrink: 0; padding-bottom: clamp(32px, 5vw, 48px); }
+      .mobile-drawer__cta-btn {
+        display: flex; align-items: center; justify-content: center; width: 100%;
+        font-family: var(--font-sans); font-size: 1rem; font-weight: 600;
+        letter-spacing: 0.04em; padding: 16px 24px;
+        border-radius: var(--radius-pill);
+        background-color: var(--btn-bg); color: var(--btn-text);
+        transition: opacity var(--transition-fast);
+      }
+      .mobile-drawer__cta-btn:hover { opacity: 0.8; }
+
       .hero::before { display: none; }
       .hero__grid { gap: 32px; align-items: center; }
       .hero__lead { max-width: 100%; }
@@ -631,6 +708,27 @@
       </button>
     </div>
   </header>
+
+  <div class="mobile-overlay" aria-hidden="true"></div>
+  <div class="mobile-drawer" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="mobile-drawer__header">
+      <span class="mobile-drawer__logo">GLC</span>
+      <button class="mobile-drawer__close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer__nav" aria-label="Mobile navigation">
+      <a href="/about.html" class="mobile-drawer__link">about</a>
+      <a href="/service.html" class="mobile-drawer__link">service</a>
+      <a href="/class.html" class="mobile-drawer__link">class</a>
+      <a href="/text.html" class="mobile-drawer__link">text</a>
+      <a href="/price.html" class="mobile-drawer__link">price</a>
+      <a href="/passion.html" class="mobile-drawer__link">passion</a>
+    </nav>
+    <div class="mobile-drawer__cta">
+      <a href="/contact.html" class="mobile-drawer__cta-btn">contact</a>
+    </div>
+  </div>
 
   <main>
     <!-- HERO -->
@@ -983,25 +1081,40 @@
       }
 
       // ────────────────────────────────────────
-      // 5. Mobile nav toggle
+      // 5. Mobile drawer
       // ────────────────────────────────────────
       var toggle = document.querySelector('.nav-toggle');
-      var navList = document.querySelector('.main-nav__list');
-      if (toggle && navList) {
+      var drawer = document.querySelector('.mobile-drawer');
+      var overlay = document.querySelector('.mobile-overlay');
+      var drawerClose = document.querySelector('.mobile-drawer__close');
+
+      function openDrawer() {
+        drawer.classList.add('is-active');
+        overlay.classList.add('is-active');
+        toggle.classList.add('is-active');
+        toggle.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-active');
+        overlay.classList.remove('is-active');
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle && drawer) {
         toggle.addEventListener('click', function () {
-          var expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          navList.style.display = expanded ? 'none' : 'flex';
-          navList.style.flexDirection = expanded ? '' : 'column';
-          navList.style.position = expanded ? '' : 'absolute';
-          navList.style.top = expanded ? '' : '72px';
-          navList.style.left = expanded ? '' : '0';
-          navList.style.right = expanded ? '' : '0';
-          navList.style.backgroundColor = expanded ? '' : 'var(--bg-paper)';
-          navList.style.padding = expanded ? '' : '24px var(--gutter)';
-          navList.style.gap = expanded ? '' : '20px';
-          navList.style.borderBottom = expanded ? '' : '1px solid var(--border-fine)';
-          navList.style.zIndex = expanded ? '' : '99';
+          var isOpen = drawer.classList.contains('is-active');
+          isOpen ? closeDrawer() : openDrawer();
+        });
+        overlay.addEventListener('click', closeDrawer);
+        drawerClose.addEventListener('click', closeDrawer);
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && drawer.classList.contains('is-active')) closeDrawer();
         });
       }
 
