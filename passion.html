@@ -221,6 +221,42 @@
     }
     .passion__divider.is-visible { opacity: 1; }
 
+    .passion__capacity {
+      text-align: center;
+      padding: clamp(64px, 8vw, 100px) 0 clamp(48px, 6vw, 72px);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+    }
+    .passion__capacity.is-visible { opacity: 1; transform: translateY(0); }
+
+    .passion__capacity-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: clamp(12px, 1.5vw, 16px);
+    }
+
+    .passion__capacity-note {
+      font-family: var(--font-sans);
+      font-size: clamp(0.85rem, 1vw, 0.95rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: clamp(40px, 5vw, 56px);
+    }
+
+    .passion__capacity-body {
+      font-family: var(--font-sans);
+      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+      font-weight: 400;
+      line-height: 2;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
     /* ========================================
        FOOTER
        ======================================== */
@@ -297,7 +333,7 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
-      .passion__heading, .passion__subtitle, .passion__text, .passion__list, .passion__divider {
+      .passion__heading, .passion__subtitle, .passion__text, .passion__list, .passion__divider, .passion__capacity {
         opacity: 1 !important; transform: none !important;
       }
     }
@@ -354,7 +390,13 @@
             <li>その目標達成のために、私（講師）をどのように活用していくか</li>
           </ul>
 
-          <p class="passion__text" data-animate="fade">当塾は、あなたの本気の挑戦を全力でサポートするための環境です。私という存在を最大限に「活用」して、一緒に夢への第一歩を踏み出しましょう！</p>
+          <div class="passion__divider" data-animate="fade"></div>
+
+          <div class="passion__capacity" data-animate="fade">
+            <h2 class="passion__capacity-heading">定員12名</h2>
+            <p class="passion__capacity-note">（現在、お迎えできるのは残り2名様となります）</p>
+            <p class="passion__capacity-body">一人ひとりの「個」と真摯に向き合い、その可能性を最大限に引き出すために。<br>本気の挑戦には、妥協のないサポート体制が不可欠です。GLCでは、生徒一人ひとりに深くフォーカスし、きめ細やかな指導と対話を維持するため、少人数制を徹底しております。</p>
+          </div>
         </div>
       </div>
     </section>
