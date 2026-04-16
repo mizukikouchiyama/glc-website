@@ -191,6 +191,54 @@
     .text-page__divider.is-visible { opacity: 1; }
 
     /* ========================================
+       TEXT PAGE — BOOK SHOWCASE
+       ======================================== */
+    .text-page__books {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(48px, 6vw, 80px);
+      margin-top: clamp(8px, 2vw, 16px);
+    }
+
+    .book-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(20px, 3vw, 32px);
+      max-width: 400px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--ease-smooth) 0.25s, transform 0.8s var(--ease-smooth) 0.25s;
+    }
+    .book-card.is-visible { opacity: 1; transform: translateY(0); }
+
+    .book-card__cover {
+      width: 100%;
+      max-width: 340px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-fine);
+    }
+
+    .book-card__title {
+      font-family: var(--font-sans);
+      font-size: clamp(0.88rem, 1.1vw, 1rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.03em;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .book-card__subtitle {
+      display: block;
+      font-weight: 400;
+      font-size: 0.85em;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* ========================================
        FOOTER
        ======================================== */
     .site-footer {
@@ -344,7 +392,7 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
-      .text-page__heading, .text-page__message, .text-page__divider {
+      .text-page__heading, .text-page__message, .text-page__divider, .book-card {
         opacity: 1 !important; transform: none !important;
       }
     }
@@ -404,7 +452,22 @@
         <div class="text-page__inner">
           <h1 class="text-page__heading" id="text-heading" data-animate="fade">Text</h1>
           <div class="text-page__divider" data-animate="fade"></div>
-          <p class="text-page__message" data-animate="fade">テキストは現在執筆中です。</p>
+          <div class="text-page__books">
+            <article class="book-card" data-animate="fade">
+              <img
+                src="assets/book-shiko-no-kaizodo.jpg"
+                alt="思考の解像度 — 論説文の読み方、完全攻略 書籍カバー"
+                class="book-card__cover"
+                width="1748"
+                height="2480"
+                loading="lazy"
+              >
+              <h2 class="book-card__title">
+                思考の解像度
+                <span class="book-card__subtitle">論説文の読み方、完全攻略</span>
+              </h2>
+            </article>
+          </div>
         </div>
       </div>
     </section>
