@@ -461,8 +461,8 @@
     .for-whom__list.is-visible { opacity: 1; transform: translateY(0); }
 
     .for-whom__item {
-      display: flex; gap: 16px; align-items: flex-start;
-      padding: clamp(16px, 2vw, 20px) 0;
+      position: relative;
+      padding: clamp(16px, 2vw, 20px) 0 clamp(16px, 2vw, 20px) 28px;
       border-top: 1px solid var(--border-fine);
       font-family: var(--font-sans);
       font-size: clamp(0.92rem, 1.1vw, 1rem);
@@ -474,7 +474,9 @@
       content: '—';
       font-family: var(--font-serif);
       font-size: 1rem; color: var(--text-muted);
-      flex-shrink: 0; padding-top: 2px;
+      position: absolute;
+      left: 0;
+      top: clamp(16px, 2vw, 20px);
     }
 
     .for-whom__note {
@@ -1225,11 +1227,11 @@
             このプログラムは、こんな高校生のためのものです
           </h2>
           <ul class="for-whom__list" data-animate="fade">
-            <li class="for-whom__item"><strong>青山学院大学・MARCH（明治・青学・立教・中央・法政）を本気で志望する</strong>山口県内の高校生</li>
-            <li class="for-whom__item">早稲田・慶應も視野に入れた、文系難関大進学を目指す生徒</li>
-            <li class="for-whom__item">共通テスト文系科目（英語・国語・日本史）で<strong>安定して8割以上</strong>を取りたい生徒</li>
-            <li class="for-whom__item">山口高校・防府高校・野田学園・高川学園・中村学園・誠英高校など、県内進学校に在籍する生徒</li>
-            <li class="for-whom__item">地方在住でありながら、<strong>首都圏水準の受験戦略と教材</strong>にアクセスしたい生徒</li>
+            <li class="for-whom__item"><span><strong>青山学院大学・MARCH（明治・青学・立教・中央・法政）を本気で志望する</strong>山口県内の高校生</span></li>
+            <li class="for-whom__item"><span>早稲田・慶應も視野に入れた、文系難関大進学を目指す生徒</span></li>
+            <li class="for-whom__item"><span>共通テスト文系科目（英語・国語・日本史）で<strong>安定して8割以上</strong>を取りたい生徒</span></li>
+            <li class="for-whom__item"><span>山口高校・防府高校・野田学園・高川学園・中村学園・誠英高校など、県内進学校に在籍する生徒</span></li>
+            <li class="for-whom__item"><span>地方在住でありながら、<strong>首都圏水準の受験戦略と教材</strong>にアクセスしたい生徒</span></li>
           </ul>
           <p class="for-whom__note" data-animate="fade">
             本プログラムは広く浅くではなく、深く狭くを志向します。指導の質と相性を保つため、第1期は2〜3名のみ、選考制で募集します。
