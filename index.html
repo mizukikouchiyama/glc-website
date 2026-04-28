@@ -372,10 +372,9 @@
     }
 
     .hs-promo__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(48px, 8vw, 120px);
-      align-items: center;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .hs-promo__label {
@@ -423,6 +422,7 @@
 
     .hs-promo__badge {
       display: inline-block;
+      margin-left: auto; margin-right: auto;
       font-family: var(--font-sans);
       font-size: 0.8rem; font-weight: 700;
       letter-spacing: 0.06em;
@@ -437,6 +437,7 @@
     .hs-promo__badge.is-visible { opacity: 1; transform: translateY(0); }
 
     .hs-promo__cta {
+      display: flex; justify-content: center;
       opacity: 0; transform: translateY(16px);
       transition: opacity 0.7s var(--ease-smooth) 0.4s, transform 0.7s var(--ease-smooth) 0.4s;
     }
@@ -776,12 +777,6 @@
       .hero__heading { white-space: normal; }
       .card { padding: clamp(28px, 4vw, 36px) clamp(24px, 4vw, 32px); }
 
-      .hs-promo__inner {
-        grid-template-columns: 1fr;
-        gap: clamp(40px, 6vw, 64px);
-      }
-      .hs-promo__visual { order: -1; max-width: 480px; }
-      .hs-promo__visual-en { font-size: clamp(1.4rem, 4vw, 2rem); }
 
       .footer__nav-list { flex-wrap: wrap; gap: 16px 24px; }
       .footer__bottom { grid-template-columns: 1fr; justify-items: center; gap: 12px; text-align: center; }
@@ -923,39 +918,22 @@
     <section class="hs-promo" aria-labelledby="hs-promo-heading">
       <div class="container">
         <div class="hs-promo__inner">
-
-          <!-- TEXT SIDE -->
-          <div>
-            <p class="hs-promo__label" data-animate="hs-fade">For High School Students Aiming Higher</p>
-            <h2 class="hs-promo__heading" id="hs-promo-heading" data-animate="hs-fade">
-              青山学院大学/MARCH<br>合格プログラム
-            </h2>
-            <p class="hs-promo__sub" data-animate="hs-fade">The Aoyama Path — Beyond the Entrance, Toward Your Future</p>
-            <p class="hs-promo__body" data-animate="hs-fade">
-              防府で、青山学院大学卒業生による青学/MARCH逆算指導を。地方からの情報格差を埋め、志望学部に特化したカリキュラムで合格までを設計します。
-            </p>
-            <div class="hs-promo__badge" data-animate="hs-fade">
-              第1期生 2〜3名 限定募集中 &ensp;|&ensp; 月額 40,000円
-            </div>
-            <div class="hs-promo__cta" data-animate="hs-fade">
-              <a href="/march-aoyama.html" class="hs-promo__cta-link">
-                プログラム詳細を見る <span class="arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
+          <p class="hs-promo__label" data-animate="hs-fade">For High School Students Aiming Higher</p>
+          <h2 class="hs-promo__heading" id="hs-promo-heading" data-animate="hs-fade">
+            青山学院大学/MARCH<br>合格プログラム
+          </h2>
+          <p class="hs-promo__sub" data-animate="hs-fade">The Aoyama Path — Beyond the Entrance, Toward Your Future</p>
+          <p class="hs-promo__body" data-animate="hs-fade">
+            防府で、青山学院大学卒業生による青学/MARCH逆算指導を。地方からの情報格差を埋め、志望学部に特化したカリキュラムで合格までを設計します。
+          </p>
+          <div class="hs-promo__badge" data-animate="hs-fade">
+            第1期生 2〜3名 限定募集中 &ensp;|&ensp; 月額 40,000円
           </div>
-
-          <!-- VISUAL SIDE -->
-          <div class="hs-promo__visual" data-animate="hs-visual" aria-hidden="true">
-            <div class="hs-promo__visual-inner">
-              <span class="hs-promo__visual-en">The Aoyama<br><em>Path</em></span>
-              <div class="hs-promo__visual-line"></div>
-              <p class="hs-promo__visual-ja">
-                青学・MARCH・早慶へ<br>
-                地方からの最短距離
-              </p>
-            </div>
+          <div class="hs-promo__cta" data-animate="hs-fade">
+            <a href="/march-aoyama.html" class="hs-promo__cta-link">
+              プログラム詳細を見る <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
           </div>
-
         </div>
       </div>
     </section>
